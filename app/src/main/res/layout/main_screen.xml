@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><!--android background = ""-->
+
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fancy="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/l3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="70dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="GAMES PLAYED: "
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/gamesplayed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="0"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:text="Tic"
+                    android:textColor="#00FF53"
+                    android:textSize="47sp" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:text="Tac"
+                    android:textColor="#FDD439"
+                    android:textSize="47sp" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:text="Toe !"
+                    android:textColor="#FC0000"
+                    android:textSize="47sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/l5"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/tictactoe" />
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnSingle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:paddingStart="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    fancy:fb_borderColor="#FFFFFF"
+                    fancy:fb_defaultColor="#4E27F0"
+                    fancy:fb_iconPaddingBottom="6dp"
+                    fancy:fb_iconPaddingLeft="6dp"
+                    fancy:fb_iconPaddingRight="6dp"
+                    fancy:fb_iconPaddingTop="6dp"
+                    fancy:fb_iconPosition="right"
+                    fancy:fb_iconResource="@drawable/ic_play_arrow_black_24dp"
+                    fancy:fb_radius="30dp"
+                    fancy:fb_text="1 Player VS PC"
+                    fancy:fb_textColor="#ffffff"
+                    fancy:fb_textGravity="center_horizontal"
+                    fancy:fb_textSize="19sp" />
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnMulti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:paddingStart="21dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    fancy:fb_borderColor="#FFFFFF"
+                    fancy:fb_defaultColor="#B000EE"
+                    fancy:fb_iconPaddingBottom="6dp"
+                    fancy:fb_iconPaddingLeft="3dp"
+                    fancy:fb_iconPaddingRight="7dp"
+                    fancy:fb_iconPaddingTop="6dp"
+                    fancy:fb_iconPosition="right"
+                    fancy:fb_iconResource="@drawable/ic_play_arrow_black_24dp"
+                    fancy:fb_radius="30dp"
+                    fancy:fb_text="2 Players Mode"
+                    fancy:fb_textColor="#ffffff"
+                    fancy:fb_textGravity="center_horizontal"
+                    fancy:fb_textSize="19sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/l4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp">
+
+            <ImageView
+                android:id="@+id/ivInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/ic_info_outline_black_24dp"
+                android:backgroundTint="@android:color/white" />
+
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_settings_black_24dp"
+                android:backgroundTint="@android:color/white" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

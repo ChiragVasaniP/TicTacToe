@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?><!--android background = ""-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPlayerBackground">
+
+        <LinearLayout
+            android:id="@+id/parentll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    android:id="@+id/ivback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{(view)->onClick.onClick(view)}"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/ivshare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{(view)->onClick.onClick(view)}"
+                    android:src="@drawable/ic_share_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivshare"
+                    android:layout_centerHorizontal="true"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llDiff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp">
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btneasy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->onClick.onClick(view)}"
+                    fancy:fb_defaultColor="#333333"
+                    fancy:fb_radius="4dp"
+                    fancy:fb_text="Easy"
+                    fancy:fb_textColor="@color/colorBtnDefault"
+                    fancy:fb_textSize="18sp" />
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnmedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->onClick.onClick(view)}"
+                    fancy:fb_defaultColor="#333333"
+                    fancy:fb_radius="4dp"
+                    fancy:fb_text="Medium"
+                    fancy:fb_textColor="@color/colorBtnDefault"
+                    fancy:fb_textSize="18sp" />
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnhard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->onClick.onClick(view)}"
+                    fancy:fb_defaultColor="#333333"
+                    fancy:fb_radius="4dp"
+                    fancy:fb_text="Hard"
+                    fancy:fb_textColor="@color/colorBtnDefault"
+                    fancy:fb_textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="40dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvPlayAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/play_again"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/btnRefresh"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPlayAgain"
+                android:layout_marginTop="9dp"
+                android:onClick="@{(view)->onClick.onClick(view)}"
+                fancy:fb_defaultColor="@color/colorPrimary"
+                fancy:fb_iconPaddingBottom="5dp"
+                fancy:fb_iconPaddingTop="5dp"
+                fancy:fb_iconResource="@drawable/ic_refresh_black_24dp"
+                fancy:fb_radiusBottomLeft="42dp"
+                fancy:fb_radiusBottomRight="42dp"
+                fancy:fb_radiusTopLeft="42dp"
+                fancy:fb_radiusTopRight="42dp"
+                fancy:fb_text="" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/frame" />
+    </FrameLayout>
+
+</layout>
+
+
