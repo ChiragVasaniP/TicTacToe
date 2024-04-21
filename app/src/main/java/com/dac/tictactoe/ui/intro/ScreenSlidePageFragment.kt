@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
+import com.airbnb.lottie.LottieAnimationView
 import com.dac.tictactoe.R
 
 private const val INTRO_DATA = "Data"
@@ -32,7 +34,9 @@ class ScreenSlidePageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        param1?.image?.let { view.findViewById<ImageView>(R.id.iv_intro).setImageResource(it) }
+        param1?.image?.let { view.findViewById<LottieAnimationView>(R.id.iv_intro).setAnimation(it) }
+        param1?.description?.let { view.findViewById<TextView>(R.id.txt_description).text = it }
+        param1?.title?.let { view.findViewById<TextView>(R.id.txt_title).text = it }
 
     }
 

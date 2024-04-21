@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import com.airbnb.lottie.LottieAnimationView
 import com.dac.tictactoe.R
 import com.dac.tictactoe.ai.EasyAI
 import com.dac.tictactoe.ai.HardAI
@@ -35,7 +36,7 @@ class SinglePlayerActivity :
     val mediaPlayer2: MediaPlayer by lazy { MediaPlayer.create(this, R.raw.soundc2) }
     val btnList by lazy { mutableListOf(mBinding.btneasy, mBinding.btnmedium, mBinding.btnhard) }
 
-    var mImageViewList = ArrayList<ImageView>()
+    var mImageViewList = ArrayList<LottieAnimationView>()
     private var mPlayerListFirst = ArrayList<Int>()
     private var mPlayerListSecond = ArrayList<Int>()
 
@@ -124,9 +125,10 @@ class SinglePlayerActivity :
 
     private fun intitialsecells() {
         for (i in 0..8) {
-            val cell = ImageView(this)
+            val cell = LottieAnimationView(this)
             cell.setLayoutParams(ViewGroup.LayoutParams(-2, -2))
             cell.setTag(Integer.valueOf(i))
+            cell.playAnimation()
             cell.id = 2000 + i
 
             cell.setOnClickListener { view ->
@@ -165,7 +167,7 @@ class SinglePlayerActivity :
     }
 
     private fun CellCkick(v: View) {
-        val buSelected = v as ImageView
+        val buSelected = v as LottieAnimationView
         var cellId = 0
         val buSelectedId = buSelected.id
         when (buSelectedId) {
@@ -175,11 +177,14 @@ class SinglePlayerActivity :
 
     }
 
-    private fun playGame(cellId: Int, buSelected: ImageView) {
+    private fun playGame(cellId: Int, buSelected: LottieAnimationView) {
         try {
 
             if (activePlayer == 1) {
-                buSelected.setImageResource(R.drawable.player1)
+                buSelected.setAnimation(R.raw.lottie_circle)
+                buSelected.speed = 1.5f
+                buSelected.playAnimation()
+
                 mPlayerListFirst.add(cellId)
                 activePlayer = 2
                 if (findWinner() != -1) {
@@ -187,11 +192,12 @@ class SinglePlayerActivity :
                     return
                 }
                 launch {
-                    delay(400)
+                    delay(1500)
                     autoPlay()
                 }
             } else if (activePlayer == 2) {
-                buSelected.setImageResource(R.drawable.player2)
+                buSelected.setAnimation(R.raw.lottie_cross)
+                buSelected.playAnimation()
                 // buSelected.setBackgroundColor(Color.BLUE)
                 activePlayer = 1
                 mPlayerListSecond.add(cellId)
